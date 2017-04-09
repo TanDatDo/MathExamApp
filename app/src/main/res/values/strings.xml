@@ -1,0 +1,26 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">MathExam App</string>
+    <string name="exam">FINAL EXAM</string>
+    <string name="description">The exam has 3 questions, each worth 10 points. Please follow the instruction w</string>
+    <string name="namehint">Type your name here</string>
+    <string name="emailhint">Type your email address here</string>
+    <string name="questionone">Question 1: 5 x 2 = ? </string>
+    <string name="hintone">Type an integer number</string>
+    <string name="questiontwo">Question 2: Find x when 5x = 100</string>
+    <string name="answer_two_a">50</string>
+    <string name="answer_two_b">20</string>
+    <string name="questionthree">Question 3: Calculate the area of the quare when a=5</string>
+    <string name="hintthree">Type an integer number</string>
+    <string name="couting">You have done ... answers</string>
+    <string name="toast">You have to answer all three questions</string>
+    <string name="submit">Submit</string>
+    <string name="sendResult">Receive answer key</string>
+    <string name="before">Your score is ...</string>
+    <string name="name">Name: </string>
+    <string name="scoreMessage">" Your score is ..."</string>
+    <string name="ExtraSubject">Exam Answer for  </string>
+    <string name="ExtraText">Correct Answer: \n Question 1: 10 \n Question 2: 20 \n Question 3: 25</string>
+
+
+
+</resources>
