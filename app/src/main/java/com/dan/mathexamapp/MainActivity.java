@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             Score.setText(scoreMessage());}}
 
 
-//method to check whether user answer all the required question
+//method to check whether users answer all the required question
     private boolean countingSubmit() {
 
         RadioGroup answerTwo= (RadioGroup)findViewById(R.id.answer_two);
@@ -70,19 +70,19 @@ public class MainActivity extends AppCompatActivity {
         scoremessage += String.valueOf(score);
         return scoremessage;}
 
-//   method to check whether user answer question 1 correctly
+//   method to check whether user answer the 1st question correctly
     private boolean checkOne() {
         EditText answerone = (EditText) findViewById(R.id.answer_one);
         String answer = answerone.getText().toString();
         if (answer.equals("10")) {return true;}
         else {return false;}}
-// method to check whether user answer question 2 correctly
+// method to check whether user answer the 2th question correctly
     private boolean checkTwo() {
         RadioButton answerTwo = (RadioButton) findViewById(R.id.answer_two_b);
         if (answerTwo.isChecked()) {return true;}
         else {return false;}}
 
-// method to check whether user answer question 3 correcly
+// method to check whether user answer the 3th question correcly
     private boolean checkThree() {
         EditText answerThree = (EditText) findViewById(R.id.answer_three);
         String three= answerThree.getText().toString();
@@ -118,7 +118,3 @@ public class MainActivity extends AppCompatActivity {
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);}}
 }
-
-
-
-
