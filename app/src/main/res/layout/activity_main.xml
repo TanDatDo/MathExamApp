@@ -11,43 +11,33 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/exam"
-            android:layout_gravity="center_horizontal"
-            android:textStyle="bold"
-            android:textSize="30sp"
-            android:textColor="@color/red"/>
-
+            style="@style/HeadingStyle"
+            android:text="@string/exam" />
+        <TextView
+            style="@style/OtherStyle"
+            android:text="@string/description"/>
         <EditText
             android:id="@+id/name_typing"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/namehint"
+            style="@style/OtherStyle"
+            android:hint="@string/name_hint"
             />
         <EditText
             android:id="@+id/email_typing"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/emailhint"
+            style="@style/OtherStyle"
+            android:hint="@string/email_hint"
             />
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/questionone"
-            android:textSize="25sp"
-            android:textColor="@color/red"/>
+            style="@style/QuestionStyle"
+            android:text="@string/question_one"
+            />
         <EditText
             android:id="@+id/answer_one"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/hintone"/>
+            style="@style/OtherStyle"
+            android:hint="@string/hint_one"/>
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/questiontwo"
-            android:textSize="25sp"
-            android:textColor="@color/red"/>
+            style="@style/QuestionStyle"
+            android:text="@string/question_two"
+            />
         <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -55,55 +45,40 @@
             android:id="@+id/answer_two">
             <RadioButton
                 android:id="@+id/answer_two_a"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/OtherStyle"
                 android:text="@string/answer_two_a"
-                android:textSize="25sp"
                 />
             <RadioButton
                 android:id="@+id/answer_two_b"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/answer_two_b"
-                android:textSize="25sp"/>
+                style="@style/OtherStyle"
+                android:text="@string/answer_two_b" />
         </RadioGroup>
         <TextView
-            android:id="@+id/answer_counting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/questionthree"
-            android:textSize="25sp"
-            android:textColor="@color/red"/>
+            style="@style/QuestionStyle"
+            android:text="@string/question_three"/>
         <EditText
             android:id="@+id/answer_three"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/hintthree"
-            />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            android:text="@string/submit"
-            android:onClick="submit"
-            android:textSize="25dp"
-            android:layout_gravity="center_horizontal"/>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            android:onClick="send_result"
-            android:text="@string/sendResult"
-            android:textSize="25dp"
-            android:layout_gravity="center_horizontal"/>
+            style="@style/OtherStyle"
+            android:hint="@string/hint_three" />
         <TextView
-            android:id="@+id/score"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/before"
-            android:layout_gravity="center_horizontal"
-            android:textSize="25dp"/>
+            style="@style/QuestionStyle"
+            android:text="@string/question_four"/>
+        <CheckBox
+            android:id="@+id/answer_four_a"
+            style="@style/OtherStyle"
+            android:text="@string/answer_four_a"/>
+        <CheckBox
+            android:id="@+id/answer_four_b"
+            style="@style/OtherStyle"
+            android:text="@string/answer_four_b"/>
+        <Button
+            style="@style/ButtonStyle"
+            android:text="@string/submit"
+            android:onClick="submit" />
+        <Button
+            style="@style/ButtonStyle"
+            android:onClick="sendResult"
+            android:text="@string/sendResult" />
+
     </LinearLayout>
 </ScrollView>

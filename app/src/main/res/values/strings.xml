@@ -1,26 +1,23 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">MathExam App</string>
     <string name="exam">FINAL EXAM</string>
-    <string name="description">The exam has 3 questions, each worth 10 points. Please follow the instruction w</string>
-    <string name="namehint">Type your name here</string>
-    <string name="emailhint">Type your email address here</string>
-    <string name="questionone">Question 1: 5 x 2 = ? </string>
-    <string name="hintone">Type an integer number</string>
-    <string name="questiontwo">Question 2: Find x when 5x = 100</string>
+    <string name="description">The exam has 4 questions, each worth 10 points.</string>
+    <string name="name_hint">Type your name here</string>
+    <string name="email_hint">Type your email address here</string>
+    <string name="question_one">Question 1: 5 x 2 = ? </string>
+    <string name="hint_one">Type an integer number</string>
+    <string name="question_two">Question 2: Find x when 5x = 100</string>
     <string name="answer_two_a">50</string>
     <string name="answer_two_b">20</string>
-    <string name="questionthree">Question 3: Calculate the area of the quare when a=5</string>
-    <string name="hintthree">Type an integer number</string>
-    <string name="couting">You have done ... answers</string>
-    <string name="toast">You have to answer all three questions</string>
+    <string name="question_three">Question 3: Calculate the area of the quare when a=5</string>
+    <string name="hint_three">Type an integer number</string>
     <string name="submit">Submit</string>
-    <string name="sendResult">Receive answer key</string>
-    <string name="before">Your score is ...</string>
+    <string name="sendResult">Receive answer key through</string>
     <string name="name">Name: </string>
-    <string name="scoreMessage">" Your score is ..."</string>
+    <string name="scoreMessage">" Your score is "</string>
     <string name="ExtraSubject">Exam Answer for  </string>
-    <string name="ExtraText">Correct Answer: \n Question 1: 10 \n Question 2: 20 \n Question 3: 25</string>
-
-
-
+    <string name="ExtraText">Correct Answer: \n Question 1: 10 \n Question 2: 20 \n Question 3: 25 \n Question 4: both a and b</string>
+    <string name="question_four"> Question 4: 5 = ?</string>
+    <string name="answer_four_a">a: 10/2 </string>
+    <string name="answer_four_b">b: quare root of 25</string>
 </resources>

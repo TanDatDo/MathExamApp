@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -34,78 +35,71 @@ public class MainActivity extends AppCompatActivity {
 //        Restart method in case the phone is rotating
         if (savedInstanceState != null) {
             scoremessage = savedInstanceState.getString(SCORE);
-            score=savedInstanceState.getInt(MESSAGE);
-            TextView Score = (TextView)findViewById(R.id.score);
-            Score.setText(scoreMessage());}}
+            score=savedInstanceState.getInt(MESSAGE);}}
 
-
-//method to check whether users answer all the required question
-    private boolean countingSubmit() {
-
-        RadioGroup answerTwo= (RadioGroup)findViewById(R.id.answer_two);
-        EditText answerone = (EditText) findViewById(R.id.answer_one);
-        String two =answerone.getText().toString();
-        EditText answerThree = (EditText) findViewById(R.id.answer_three);
-        String three =answerone.getText().toString();
-//        if statement check whether each questions has been answer
-        if ( two.isEmpty()
-                ||answerTwo.getCheckedRadioButtonId()==-1
-                || three.isEmpty()){
-            return false;}
-        else{return true;}
-
-    }
 //    method check the score, give the message about the user performance based on previous method such as checkOne...
     private String scoreMessage(){
+//        find the EditText which require users to type name
         EditText nametyping= (EditText)findViewById(R.id.name_typing);
+//        get the name typed by the users
         String name=nametyping.getText().toString();
         scoremessage= getString(R.string.name);
         scoremessage+=name +"\n";
         scoremessage+= getString(R.string.scoreMessage);
-//        checking the score base on checkOne... method
-        score=30;
+//        checking the score base on checkOne, checkTwo, chechThree, checkFour methods
+//        create score variables if the users answer wrong, the score is decresed by 10
+        score=40;
         if (checkOne()==false){score-=10;}
         if (checkTwo()==false){score-=10;}
         if (checkThree()==false){score-=10;}
+        if (checkFour()==false){score-=10;}
         scoremessage += String.valueOf(score);
+//        score message will show the name of the users, the score they gain
         return scoremessage;}
 
-//   method to check whether user answer the 1st question correctly
+//   method to check whether user answer the 1st question correctly; the right answer is 10.
+//    method return true if users answer the question correctly
     private boolean checkOne() {
         EditText answerone = (EditText) findViewById(R.id.answer_one);
         String answer = answerone.getText().toString();
         if (answer.equals("10")) {return true;}
         else {return false;}}
-// method to check whether user answer the 2th question correctly
+
+// method to check whether user answer the 2nd question correctly, the right answerTwo = 20
+//    method return true if users answer the question correctly
     private boolean checkTwo() {
         RadioButton answerTwo = (RadioButton) findViewById(R.id.answer_two_b);
         if (answerTwo.isChecked()) {return true;}
         else {return false;}}
 
-// method to check whether user answer the 3th question correcly
+// method to check whether user answer the 3rd question correcly; the right answer is 25
+//    method return true if users answer the question correctly
     private boolean checkThree() {
         EditText answerThree = (EditText) findViewById(R.id.answer_three);
         String three= answerThree.getText().toString();
-        Log.i("MainActivity.java", three);
         if (three.equals("25")){return true;}
         else {return false;}}
 
-    // method associated with submit button
+//    method to check whether users answer the 4th question correctly: the right answer is both a and b
+//    method return true if users answer the question correctly
+    private boolean checkFour(){
+        CheckBox answerfoura = (CheckBox) findViewById(R.id.answer_four_a);
+        boolean checkfoura =answerfoura.isChecked();
+        CheckBox answerfourb =(CheckBox) findViewById(R.id.answer_four_b);
+        boolean checkfourb =answerfourb.isChecked();
+        if (checkfoura & checkfourb){return true;}
+        else{return false;}}
+
+    // user click submit button to receive the score
     public void submit(View view){
-//        if provide the toast message requiring user to answer all the questions
-        if (countingSubmit()==false){
             Context not_enuf = getApplicationContext();
-            CharSequence please = "You have to answer all 3 questions to submit";
             int notEnufDuration= Toast.LENGTH_SHORT;
-            Toast.makeText(not_enuf, please ,notEnufDuration).show();}
-// else provide the name of the user and the score
-        else{
-            TextView Score = (TextView)findViewById(R.id.score);
-            Score.setText(scoreMessage());}}
-    private void display(){}
+//        the second parameter of makeText is scoreMessage which is defined above
+//        when the users click button, toast message will appear showing the number of correct answer and their name
+        Toast.makeText(not_enuf, scoreMessage() ,notEnufDuration).show();}
 
     /// /Using Indent to send the detail result by email
-    public void send_result(View view){
+    public void sendResult(View view){
         EditText nametyping= (EditText)findViewById(R.id.name_typing);
         String name=nametyping.getText().toString();
         EditText emailtyping= (EditText) findViewById(R.id.email_typing);
