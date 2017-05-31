@@ -12,7 +12,7 @@
     <string name="question_three">Question 3: Calculate the area of the quare when a=5</string>
     <string name="hint_three">Type an integer number</string>
     <string name="submit">Submit</string>
-    <string name="sendResult">Receive answer key through</string>
+    <string name="sendResult">Receive answers key through</string>
     <string name="name">Name: </string>
     <string name="scoreMessage">" Your score is "</string>
     <string name="ExtraSubject">Exam Answer for  </string>

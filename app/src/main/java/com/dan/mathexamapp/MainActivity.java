@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     int score;
 
 //  define a static variable for later saveinstance method
-    static final String SCORE = "SCORE";
+static final String SCORE = "SCORE";
     static final String MESSAGE = "MESSAGE";
 
 
@@ -38,64 +38,80 @@ public class MainActivity extends AppCompatActivity {
             score=savedInstanceState.getInt(MESSAGE);}}
 
 //    method check the score, give the message about the user performance based on previous method such as checkOne...
-    private String scoreMessage(){
+private String scoreMessage(){
 //        find the EditText which require users to type name
-        EditText nametyping= (EditText)findViewById(R.id.name_typing);
+    EditText nametyping= (EditText)findViewById(R.id.name_typing);
 //        get the name typed by the users
-        String name=nametyping.getText().toString();
-        scoremessage= getString(R.string.name);
-        scoremessage+=name +"\n";
-        scoremessage+= getString(R.string.scoreMessage);
+    String name=nametyping.getText().toString();
+    scoremessage= getString(R.string.name);
+    scoremessage+=name +"\n";
+    scoremessage+= getString(R.string.scoreMessage);
 //        checking the score base on checkOne, checkTwo, chechThree, checkFour methods
 //        create score variables if the users answer wrong, the score is decresed by 10
-        score=40;
-        if (checkOne()==false){score-=10;}
-        if (checkTwo()==false){score-=10;}
-        if (checkThree()==false){score-=10;}
-        if (checkFour()==false){score-=10;}
-        scoremessage += String.valueOf(score);
-//        score message will show the name of the users, the score they gain
-        return scoremessage;}
+    score=40;
+    if (checkOne()==false){
+        score-=10;}
+    if (checkTwo()==false){
+        score-=10;}
+    if (checkThree()==false){
+        score-=10;}
+    if (checkFour()==false){
+        score-=10;}
+    scoremessage += String.valueOf(score);
+//      score message will show the name of the users, the score they gain
+    return scoremessage;}
 
 //   method to check whether user answer the 1st question correctly; the right answer is 10.
 //    method return true if users answer the question correctly
-    private boolean checkOne() {
-        EditText answerone = (EditText) findViewById(R.id.answer_one);
-        String answer = answerone.getText().toString();
-        if (answer.equals("10")) {return true;}
-        else {return false;}}
+private boolean checkOne() {
+    EditText answerone = (EditText) findViewById(R.id.answer_one);
+    String answer = answerone.getText().toString();
+    if (answer.equals("10")) {
+        return true;}
+    else {
+        return false;}
+}
 
 // method to check whether user answer the 2nd question correctly, the right answerTwo = 20
 //    method return true if users answer the question correctly
-    private boolean checkTwo() {
-        RadioButton answerTwo = (RadioButton) findViewById(R.id.answer_two_b);
-        if (answerTwo.isChecked()) {return true;}
-        else {return false;}}
+private boolean checkTwo() {
+    RadioButton answerTwo = (RadioButton) findViewById(R.id.answer_two_b);
+    if (answerTwo.isChecked()) {
+        return true;}
+    else {
+        return false;}
+}
 
 // method to check whether user answer the 3rd question correcly; the right answer is 25
 //    method return true if users answer the question correctly
-    private boolean checkThree() {
-        EditText answerThree = (EditText) findViewById(R.id.answer_three);
-        String three= answerThree.getText().toString();
-        if (three.equals("25")){return true;}
-        else {return false;}}
+private boolean checkThree() {
+    EditText answerThree = (EditText) findViewById(R.id.answer_three);
+    String three= answerThree.getText().toString();
+    if (three.equals("25")){
+        return true;}
+    else {
+        return false;}
+}
 
 //    method to check whether users answer the 4th question correctly: the right answer is both a and b
 //    method return true if users answer the question correctly
-    private boolean checkFour(){
-        CheckBox answerfoura = (CheckBox) findViewById(R.id.answer_four_a);
-        boolean checkfoura =answerfoura.isChecked();
-        CheckBox answerfourb =(CheckBox) findViewById(R.id.answer_four_b);
-        boolean checkfourb =answerfourb.isChecked();
-        if (checkfoura & checkfourb){return true;}
-        else{return false;}}
+private boolean checkFour(){
+    CheckBox answerfoura = (CheckBox) findViewById(R.id.answer_four_a);
+    boolean checkfoura =answerfoura.isChecked();
+    CheckBox answerfourb =(CheckBox) findViewById(R.id.answer_four_b);
+    boolean checkfourb =answerfourb.isChecked();
+    if (checkfoura & checkfourb){
+        return true;}
+    else{
+        return false;}
+}
 
     // user click submit button to receive the score
     public void submit(View view){
-            Context not_enuf = getApplicationContext();
-            int notEnufDuration= Toast.LENGTH_SHORT;
-//        the second parameter of makeText is scoreMessage which is defined above
-//        when the users click button, toast message will appear showing the number of correct answer and their name
+        Context not_enuf = getApplicationContext();
+        int notEnufDuration= Toast.LENGTH_SHORT;
+//      the second parameter of makeText is scoreMessage which is defined above
+//      when the users click button, toast message will appear showing the number of correct answer and their name
         Toast.makeText(not_enuf, scoreMessage() ,notEnufDuration).show();}
 
     /// /Using Indent to send the detail result by email
